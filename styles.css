@@ -17,6 +17,14 @@ body {
     font-style: normal;
 }
 
+.lab {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	width: 675px;
+	font-family: Arial;
+}
+
 .sidebar {
 	position: fixed;
 	top: 0px;
@@ -69,31 +77,49 @@ body {
 	border-radius: 10px;
 }
 
+.title {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	font-size: 55px;
+	width: 700px;
+	border-bottom: 1px solid black;
+}
+
 #header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 82px;
 	background: rgb(0, 56, 147);
 	color: white;
-	text-align: center;
-	padding: 15px;
+	padding: 15px 0px;
 	border-bottom: 1px solid black;
 	box-shadow: 0px 15px 40px 15px black;
 }
 
 #header-txt {
+	position: relative;
+	top: -50%;
+	left: 0%;
 	font-size: 84px;
 }
 
 #main {
-
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	line-height: 2.0;
 }
 
 #nav {
 	position: fixed;
 	top: 113px;
 	width: 40%;
+	height: 20px;
 	background: #b7b7b7;
 	color: black;
 	padding: 5px 30%;
@@ -105,6 +131,8 @@ body {
 }
 
 #nav > a {
+	position: relative;
+	top: -50%;
 	text-decoration: none;
 	color: black;
 }
