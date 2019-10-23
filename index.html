@@ -7,19 +7,30 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body>
+		<div id="main">
+			<div class="unit">
+				<h1 class="title" id="exceptions">Exceptions</h1>
+				<div class="lab">
+					
+				</div>
+				
+				<div class="unit">
+				<h1 class="title" id="exceptions">Big O Notation</h1>
+				<div class="lab">
+					Implement bubble sort-another simple yet inefficient sorting technique. It's called bubble sort because smaller values gradually "bubble" their way to the top of the array (i.e., towards the first element) like air bubble rising in water, while the larger values sink to the bottom (end) of the array. The technique uses nested loops to make several passes through the array. Each pass compares successive pairs of elements. If a pair is in increasing order (or the values are equal), the bubble sort leaves the values as they are. If a pair is in decreasing order, the bubble sort swaps their values if necessary. It then compares the second and third elements of the array. The end of this pass compares the last two elements in the array and swaps them if necessary. After one pass, the largest element will be in the last index. After two passes, the largest two elements will be in the last two indeces. Explain why bubble sort is an O(n2) algorithm.
+				</div>
+			</div>
+		</div>
+
 		<div id="header">
-			<span id="header-txt">MHS Advanced CS</span>
+			<span id="header-txt">Labs</span>
 		</div>
 
 		<div id="nav">
-			<a href="">Home</a>
-			<a href="">BPJ Textbook</a>
-			<a href="">Labs</a>
-			<a href="">About</a>
-		</div>
-
-		<div id="main">
-
+			<a href="https://mohiganscs.github.io">Home</a>
+			<a href="https://mohiganscs.github.io/BPJ_textbook.pdf/">BPJ Textbook</a>
+			<a href="https://mohiganscs.github.io/labs/">Labs</a>
+			<a href="https://mohiganscs.github.io/about/">About</a>
 		</div>
 
 		<div class="sidebar" onclick="toggleSidebar()">
@@ -29,7 +40,7 @@
 				<span></span>
 			</div>
 			<ul>
-				<li>Exceptions</li>
+				<li onclick="toUnit(exceptions)">Exceptions</li>
 				<li>Big O Notation</li>
 				<li>Input/Output</li>
 				<li>Sets and Maps</li>
