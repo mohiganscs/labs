@@ -8,16 +8,59 @@
 	</head>
 	<body>
 		<div id="main">
+			<div class="unit" id="bigO">
+					<h1 class="title">Big O Notation</h1>
+					
+					<div class="lab">
+						<h3 class="lab-title">Bubble Sort</h3>
+						Implement bubble sort-another simple yet inefficient sorting technique. It's called bubble sort because smaller values gradually "bubble" their way to the top of the array (i.e., towards the first element) like air bubble rising in water, while the larger values sink to the bottom (end) of the array. The technique uses nested loops to make several passes through the array. Each pass compares successive pairs of elements. If a pair is in increasing order (or the values are equal), the bubble sort leaves the values as they are. If a pair is in decreasing order, the bubble sort swaps their values if necessary. It then compares the second and third elements of the array. The end of this pass compares the last two elements in the array and swaps them if necessary. After one pass, the largest element will be in the last index. After two passes, the largest two elements will be in the last two indeces. Explain why bubble sort is an O(n2) algorithm.
+					<br>
+					<h3 class="lab-title">Enhanced Bubble Sort</h3>
+					Make the following simple modifications to improve the performance of the bubble sort you developed in the previous lab:
+					<ul>
+						<li>
+							After the first pass, the largest number is guaranteed to be in the highest-numbered array element; after the second pass, the two highest numbers are "in place"; and so on. Instead of making nine comparisons on every pass for a ten element array, modify the bubble sort to make eight comparisons on the second pass, seven on the third pass, and so on.
+						</li>
+						<li>
+							The data in the array may already be in proper or near-proper order, so why make nine passes if fewer will suffice? Modify the sort to check at the end of each pass whether any swaps have been made. If there were none, the data must already be sorted, so the program should terminate. If swaps have been made, at least one more pass is needed.
+						</li>
+					</ul>
+				</div>
+			</div>
+		
 			<div class="unit">
 				<h1 class="title" id="exceptions">Exceptions</h1>
 				<div class="lab">
-					
-				</div>
-				
-				<div class="unit">
-				<h1 class="title" id="exceptions">Big O Notation</h1>
-				<div class="lab">
-					Implement bubble sort-another simple yet inefficient sorting technique. It's called bubble sort because smaller values gradually "bubble" their way to the top of the array (i.e., towards the first element) like air bubble rising in water, while the larger values sink to the bottom (end) of the array. The technique uses nested loops to make several passes through the array. Each pass compares successive pairs of elements. If a pair is in increasing order (or the values are equal), the bubble sort leaves the values as they are. If a pair is in decreasing order, the bubble sort swaps their values if necessary. It then compares the second and third elements of the array. The end of this pass compares the last two elements in the array and swaps them if necessary. After one pass, the largest element will be in the last index. After two passes, the largest two elements will be in the last two indeces. Explain why bubble sort is an O(n2) algorithm.
+					<h3 class="lab-title">Keep Trying</h3>
+					Create a new project called <i>ExceptionsProjects</i> that will contain two classes, <i>Tester</i> and <i>FileInput</i>. Create your <i>FileInput</i> class as follows: 
+					<br><br>
+					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">import</span> java.io.*; <span style="color: #008800; font-style: italic">// necessary for File and IOException</span>
+<span style="color: #000080; font-weight: bold">import</span> java.util.*; <span style="color: #008800; font-style: italic">// necessary for Scanner</span>
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> FileInput {
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">static</span> <span style="color: #000080; font-weight: bold">void</span> readTheFile(String fileName) <span style="color: #000080; font-weight: bold">throws</span> IOException {
+    Scanner sf = <span style="color: #000080; font-weight: bold">new</span> Scanner(<span style="color: #000080; font-weight: bold">new</span> File(<span style="color: #0000FF">&quot;C:\\temp_name\\&quot;</span> + fileName));
+
+    <span style="color: #000080; font-weight: bold">int</span> maxIndex = <span style="color: #0000FF">1</span>; <span style="color: #008800; font-style: italic">// so when we increment below, the first index is 0</span>
+    String[] text = <span style="color: #000080; font-weight: bold">new</span> String[<span style="color: #0000FF">1000</span>]; <span style="color: #008800; font-style: italic">// declare more than we need</span>
+
+    <span style="color: #000080; font-weight: bold">while</span>(sf.<span style="color: #FF0000">hasNext</span>()) {
+      maxIndex++;
+      text[maxIndex] = sf.<span style="color: #FF0000">nextLine</span>();
+    }
+    <span style="color: #008800; font-style: italic">// maxIndex is now the highest index of text[], = -1 if no lines of text</span>
+    sf.<span style="color: #FF0000">close</span>(); <span style="color: #008800; font-style: italic">// we opened a file so now we must close it</span>
+
+    <span style="color: #000080; font-weight: bold">for</span>(<span style="color: #000080; font-weight: bold">int</span> j = <span style="color: #0000FF">0</span>; j &lt;= maxIndex; j++) {
+      System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(text[j]);
+    }
+  }
+}
+</pre></div>
+					<br>
+					Now create a Tester class with a main method in which you repeatedly loop while inputting a file name from the keyboard. Also, inside the loop call the readTheFile method of the FileInput class and pass the file name input from the keyboard as a parameter. Set up a try-catch pair in main so as to keep looping if readTheFile passes an IOException up the calling chain. If everything in readTheFile completes successfully, then in main release from the loop and output “It worked.”
+					<br><br>
+					Provide for an escape from the loop by informing the user that he can enter the word “exit”. This
+should provide a release from the loop and print “It did not work”. 
 				</div>
 			</div>
 		</div>
@@ -30,6 +73,7 @@
 			<a href="https://mohiganscs.github.io">Home</a>
 			<a href="https://mohiganscs.github.io/BPJ_textbook.pdf/">BPJ Textbook</a>
 			<a href="https://mohiganscs.github.io/labs/">Labs</a>
+			<a href="https://mohiganscs.github.io/solutions/">Solutions</a>
 			<a href="https://mohiganscs.github.io/about/">About</a>
 		</div>
 
@@ -40,8 +84,8 @@
 				<span></span>
 			</div>
 			<ul>
+				<li onclick="toUnit(bigO)">Big O Notation</li>
 				<li onclick="toUnit(exceptions)">Exceptions</li>
-				<li>Big O Notation</li>
 				<li>Input/Output</li>
 				<li>Sets and Maps</li>
 				<li>Linked Lists</li>
