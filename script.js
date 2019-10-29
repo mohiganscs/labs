@@ -1,6 +1,13 @@
+var exceptions = document.getElementById('exceptions');
+
 function toggleSidebar() {
 	document.getElementsByClassName('sidebar')[0].classList.toggle('active');
 	document.getElementsByClassName('toggle-btn')[0].classList.toggle('active');
+}
+
+function toggleUnit(whichUnit) {
+	var element = document.getElementById(whichUnit);
+	element.classList.toggle('shown');
 }
 
 function toUnit(whichUnit) {
