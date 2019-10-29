@@ -93,13 +93,6 @@ body {
 	border-radius: 10px;
 }
 
-.split {
-	width: 700px;
-	display: flex;
-	justify-content: space-around;
-	text-align: left;
-}
-
 .title {
 	position: relative;
 	left: 50%;
@@ -107,6 +100,21 @@ body {
 	font-size: 55px;
 	width: 700px;
 	border-bottom: 1px solid black;
+}
+
+.title:hover {
+	cursor: pointer;
+}
+
+.unit > .lab {
+	display: none;
+	height: 0px;
+	transition: 0.4s;
+}
+
+.unit.shown > .lab {
+	display: block;
+	height: auto;
 }
 
 #header {
