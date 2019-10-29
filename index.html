@@ -65,7 +65,7 @@ should provide a release from the loop and print “It did not work”.
 			</div>
 
 			<div class="unit">
-				<h3 class="title">Input/Output</h3>
+				<h3 class="title" id="in/out">Input/Output</h3>
 
 				<div class="lab">
 					<h3 class="lab-title">Reading Files</h3>
@@ -88,8 +88,55 @@ should provide a release from the loop and print “It did not work”.
 							The best movie was cancelled.
 						</div>
 					</div>
-				</div>
 
+					<div class="lab">
+						<h3 class="lab-title">Student Averages</h3>
+						Create the following text file called <i>StudentScores.in</i> and store in your standard folder (<i>temp_Name</i>).
+						<br><br>
+						<div class="split">
+							<div class="contents">
+								<b>File contents:</b><br>
+								Agnes 56 82 95 100 68 52<br>
+								Bufford 87 92 97 100 96 85 93 77 98 86<br>
+								Julie 99 100 100 89 96 100 92 99 68<br>
+								Alice 40 36 85 16 0 22 72<br>
+								Bobby 100 98 92 86 88
+							</div>
+
+							<div class="output">
+								<b>Program output:</b><br>
+								Agnes, average = 76<br>
+								Bufford, average = 91<br>
+								Julie, average = 94<br>
+								Alice, average = 39<br>
+								Bobby, average = 93
+							</div>
+						</div>
+						<br>
+						Each line of the file consists of a student's name followed by an unpredictable number of test scores. The number of students is also unpredictable. The desired output is shown where the numbers there represent the average test score rounded to the nearest whole number.
+						<br><br>
+						Create a class called <i>StudentAverages</i> that will input the <i>StudentScores.in</i> text file and produce the indicated output.
+					</div>
+
+					<div class="lab">
+						<h3 class="lab-title">Write Student Averages</h3>
+
+						Modify the previous lab (Student Averages) so that it will print the output to a file rather than a console screen. Your output file should be stored in your standard folder, <i>temp_Name</i> and the file name should be <i>StudentScores.out</i>. At the completion of the program, the contents of <i>StudentScores.out</i> should be:
+						<br><br>
+						<div class="split">
+							<div class="output">
+								Agnes, average = 76<br>
+								Bufford, average = 91<br>
+								Julie, average = 94<br>
+								Alice, average = 39<br>
+								Bobby, average = 93
+							</div>
+						</div>
+						<br>
+						Call this new class <i>StudentAverages_Out</i>.
+					</div>
+
+				</div>
 			</div>
 		</div>
 
@@ -114,7 +161,7 @@ should provide a release from the loop and print “It did not work”.
 			<ul>
 				<li onclick="toUnit('bigO')">Big O Notation</li>
 				<li onclick="toUnit('exceptions')">Exceptions</li>
-				<li>Input/Output</li>
+				<li onclick="toUnit('in/out')">Input/Output</li>
 				<li>Sets and Maps</li>
 				<li>Linked Lists</li>
 				<li>Stacks and Queues</li>
