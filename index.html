@@ -9,7 +9,7 @@
 	<body>
 		<div id="main">
 			<div class="unit" id="bigO">
-					<h1 class="title">Big O Notation</h1>
+					<h3 class="title" onclick="toggleUnit('bigO')">Big O Notation</h3>
 					
 					<div class="lab">
 						<h3 class="lab-title">Bubble Sort</h3>
@@ -28,8 +28,8 @@
 				</div>
 			</div>
 		
-			<div class="unit">
-				<h1 class="title" id="exceptions">Exceptions</h1>
+			<div class="unit" id="exceptions">
+				<h1 class="title" onclick="toggleUnit('exceptions')">Exceptions</h1>
 				<div class="lab">
 					<h3 class="lab-title">Keep Trying</h3>
 					Create a new project called <i>ExceptionsProjects</i> that will contain two classes, <i>Tester</i> and <i>FileInput</i>. Create your <i>FileInput</i> class as follows: 
@@ -64,8 +64,8 @@ should provide a release from the loop and print “It did not work”.
 				</div>
 			</div>
 
-			<div class="unit">
-				<h3 class="title" id="in/out">Input/Output</h3>
+			<div class="unit" id="in/out">
+				<h3 class="title" onclick="toggleUnit('in/out')">Input/Output</h3>
 
 				<div class="lab">
 					<h3 class="lab-title">Reading Files</h3>
@@ -139,8 +139,8 @@ should provide a release from the loop and print “It did not work”.
 				</div>
 			</div>
 
-			<div class="unit">
-				<h3 class="title">Sets and Maps</h3>
+			<div class="unit" id="set/map">
+				<h3 class="title" onclick="toggleUnit('set/map')">Sets and Maps</h3>
 
 				<div class="lab">
 					<h3 class="lab-title">HashSet/Intersection</h3>
@@ -172,7 +172,7 @@ should provide a release from the loop and print “It did not work”.
 				<li onclick="toUnit('bigO')">Big O Notation</li>
 				<li onclick="toUnit('exceptions')">Exceptions</li>
 				<li onclick="toUnit('in/out')">Input/Output</li>
-				<li>Sets and Maps</li>
+				<li onclick="toUnit('set/map')">Sets and Maps</li>
 				<li>Linked Lists</li>
 				<li>Stacks and Queues</li>
 				<li>Trees</li>
