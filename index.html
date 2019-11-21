@@ -145,6 +145,39 @@ should provide a release from the loop and print “It did not work”.
 				<div class="lab">
 					<h3 class="lab-title">HashSet/Intersection</h3>
 
+					Consider the following two sets:
+					<br><br>
+					<div class="split">
+						<div class="output">
+							s1 = {"Bill", "Larry", "Adolph", "Regina", "Susie"}<br>
+							s2 = {"Larry", "Jack", "Alice", "June", "Bennie", "Susie"}
+						</div>
+					</div>
+					<br>
+					Clearly, the intersection of these two sets is {"Larry", "Susie"}. Your job is to create a class called <i>Hash_Set</i> whose <i>main</i> method finds this intersection. Make the indicated modifications in the code below to accomplish this:
+					<br><br>
+					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.*</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// we need java.util.Set, java.util.HashSet, and java.util.Iterator</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Hash_Set</span> <span style="color: #666666">{</span>
+   <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
+     Set s1 <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> HashSet<span style="color: #666666">(</span> <span style="color: #666666">);</span> <span style="color: #60a0b0; font-style: italic">//Create s1</span>
+     s1<span style="color: #666666">.</span><span style="color: #4070a0">add</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;Bill&quot;</span><span style="color: #666666">);</span>
+
+     Set s2 <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> HashSet<span style="color: #666666">(</span> <span style="color: #666666">);</span> <span style="color: #60a0b0; font-style: italic">//Create s2</span>
+     s2<span style="color: #666666">.</span><span style="color: #4070a0">add</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;Larry&quot;</span><span style="color: #666666">);</span>
+
+     <span style="color: #60a0b0; font-style: italic">// Build the intersection set</span>
+     <span style="color: #60a0b0; font-style: italic">// Modify s1 to be the intersection using the retainAll method</span>
+
+     <span style="color: #60a0b0; font-style: italic">// Print the intersection set </span>
+     <span style="color: #60a0b0; font-style: italic">// Create iter1, an Iterator for s1</span>
+     <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span> <span style="color: #666666">???</span> <span style="color: #666666">)</span> <span style="color: #666666">{</span> 
+       <span style="color: #60a0b0; font-style: italic">// Use iter1 to cycle through all objects in s1 and then print them. </span>
+     <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
 				</div>
 
 			</div>

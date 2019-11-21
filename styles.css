@@ -93,6 +93,12 @@ body {
 	border-radius: 10px;
 }
 
+.split {
+	display: flex;
+	justify-content: space-around;
+	text-align: left;
+}
+
 .title {
 	position: relative;
 	left: 50%;
