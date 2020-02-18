@@ -1,226 +1,151 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Labs</title>
-
-		<link rel="stylesheet" type="text/css" href="styles.css">
-	</head>
-	<body>
-		<div id="main">
-			<div class="unit" id="bigO">
-					<h3 class="title" onclick="toggleUnit('bigO')">Big O Notation</h3>
+  <head>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>MHS ADVANCED CS</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="https://kit.fontawesome.com/171fecdcc7.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+		<header class="menu">
+      <div class="menu-left">
+        <div class="logo">
+          MHS ADVANCED CS
+        </div>
+        <div class="links">
+					<div class="link-arrow" onclick="toggleLinks()">
+						<i class="fas fa-angle-down"></i>
+					</div>
 					
-					<div class="lab">
-						<h3 class="lab-title">Bubble Sort</h3>
-						Implement bubble sort-another simple yet inefficient sorting technique. It's called bubble sort because smaller values gradually "bubble" their way to the top of the array (i.e., towards the first element) like air bubble rising in water, while the larger values sink to the bottom (end) of the array. The technique uses nested loops to make several passes through the array. Each pass compares successive pairs of elements. If a pair is in increasing order (or the values are equal), the bubble sort leaves the values as they are. If a pair is in decreasing order, the bubble sort swaps their values if necessary. It then compares the second and third elements of the array. The end of this pass compares the last two elements in the array and swaps them if necessary. After one pass, the largest element will be in the last index. After two passes, the largest two elements will be in the last two indeces. Explain why bubble sort is an O(n2) algorithm.
-					<br>
-					<h3 class="lab-title">Enhanced Bubble Sort</h3>
-					Make the following simple modifications to improve the performance of the bubble sort you developed in the previous lab:
-					<ul>
-						<li>
-							After the first pass, the largest number is guaranteed to be in the highest-numbered array element; after the second pass, the two highest numbers are "in place"; and so on. Instead of making nine comparisons on every pass for a ten element array, modify the bubble sort to make eight comparisons on the second pass, seven on the third pass, and so on.
-						</li>
-						<li>
-							The data in the array may already be in proper or near-proper order, so why make nine passes if fewer will suffice? Modify the sort to check at the end of each pass whether any swaps have been made. If there were none, the data must already be sorted, so the program should terminate. If swaps have been made, at least one more pass is needed.
-						</li>
+					<ul class="link-list">
+						<li><a href="https://mohiganscs.github.io/">Home</a></li>
+						<li><a href="/">Lessons</a></li>
+						<li><a href="#">Resources</a></li>
+						<li><a href="#">Solutions</a></li>
+						<li><a href="#">About</a></li>
 					</ul>
+        </div>
+      </div>
+    </header>
+
+		<div class="container">
+			<h1>Lessons</h1>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/BigO.png">
+					<h3>Big O Notation</h3>
 				</div>
-			</div>
-		
-			<div class="unit" id="exceptions">
-				<h1 class="title" onclick="toggleUnit('exceptions')">Exceptions</h1>
-				<div class="lab">
-					<h3 class="lab-title">Keep Trying</h3>
-					Create a new project called <i>ExceptionsProjects</i> that will contain two classes, <i>Tester</i> and <i>FileInput</i>. Create your <i>FileInput</i> class as follows: 
-					<br><br>
-					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">import</span> java.io.*; <span style="color: #008800; font-style: italic">// necessary for File and IOException</span>
-<span style="color: #000080; font-weight: bold">import</span> java.util.*; <span style="color: #008800; font-style: italic">// necessary for Scanner</span>
-<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> FileInput {
-  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">static</span> <span style="color: #000080; font-weight: bold">void</span> readTheFile(String fileName) <span style="color: #000080; font-weight: bold">throws</span> IOException {
-    Scanner sf = <span style="color: #000080; font-weight: bold">new</span> Scanner(<span style="color: #000080; font-weight: bold">new</span> File(<span style="color: #0000FF">&quot;C:\\temp_name\\&quot;</span> + fileName));
+			</a>
 
-    <span style="color: #000080; font-weight: bold">int</span> maxIndex = <span style="color: #0000FF">1</span>; <span style="color: #008800; font-style: italic">// so when we increment below, the first index is 0</span>
-    String[] text = <span style="color: #000080; font-weight: bold">new</span> String[<span style="color: #0000FF">1000</span>]; <span style="color: #008800; font-style: italic">// declare more than we need</span>
-
-    <span style="color: #000080; font-weight: bold">while</span>(sf.<span style="color: #FF0000">hasNext</span>()) {
-      maxIndex++;
-      text[maxIndex] = sf.<span style="color: #FF0000">nextLine</span>();
-    }
-    <span style="color: #008800; font-style: italic">// maxIndex is now the highest index of text[], = -1 if no lines of text</span>
-    sf.<span style="color: #FF0000">close</span>(); <span style="color: #008800; font-style: italic">// we opened a file so now we must close it</span>
-
-    <span style="color: #000080; font-weight: bold">for</span>(<span style="color: #000080; font-weight: bold">int</span> j = <span style="color: #0000FF">0</span>; j &lt;= maxIndex; j++) {
-      System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(text[j]);
-    }
-  }
-}
-</pre></div>
-					<br>
-					Now create a Tester class with a main method in which you repeatedly loop while inputting a file name from the keyboard. Also, inside the loop call the readTheFile method of the FileInput class and pass the file name input from the keyboard as a parameter. Set up a try-catch pair in main so as to keep looping if readTheFile passes an IOException up the calling chain. If everything in readTheFile completes successfully, then in main release from the loop and output “It worked.”
-					<br><br>
-					Provide for an escape from the loop by informing the user that he can enter the word “exit”. This
-should provide a release from the loop and print “It did not work”. 
+			<a href="#">
+				<div class="topic">
+					<img src="/images/Exceptions.jpg">
+					<h3>Exceptions</h3>
 				</div>
-			</div>
+			</a>
 
-			<div class="unit" id="in/out">
-				<h3 class="title" onclick="toggleUnit('in/out')">Input/Output</h3>
-
-				<div class="lab">
-					<h3 class="lab-title">Reading Files</h3>
-					Write a class called <i>FileNerd</i> that will input the lines of text from a file named <i>NerdData.txt</i> that is stored in the <i>C:\temp_name</i> folder. After the file input loop, create a loop in which you only print out only those lines that begin with the word "The".
-					<br><br>
-					<div class="split">
-						<div class="contents">
-							<b>The contents of NerdData.txt are:</b><br>
-							Every man tries as hard as he can.<br>
-							The best way is this way.<br>
-							The schedule is very good.<br>
-							Cosmo Kramer is a doofus.<br>
-							The best movie was cancelled.
-						</div>
-
-						<div class="output">
-							<b>Output will look like this:</b><br>
-							The best way is this way.<br>
-							The schedule is very good.<br>
-							The best movie was cancelled.
-						</div>
-					</div>
-
-					<div class="lab">
-						<h3 class="lab-title">Student Averages</h3>
-						Create the following text file called <i>StudentScores.in</i> and store in your standard folder (<i>temp_Name</i>).
-						<br><br>
-						<div class="split">
-							<div class="contents">
-								<b>File contents:</b><br>
-								Agnes 56 82 95 100 68 52<br>
-								Bufford 87 92 97 100 96 85 93 77 98 86<br>
-								Julie 99 100 100 89 96 100 92 99 68<br>
-								Alice 40 36 85 16 0 22 72<br>
-								Bobby 100 98 92 86 88
-							</div>
-
-							<div class="output">
-								<b>Program output:</b><br>
-								Agnes, average = 76<br>
-								Bufford, average = 91<br>
-								Julie, average = 94<br>
-								Alice, average = 39<br>
-								Bobby, average = 93
-							</div>
-						</div>
-						<br>
-						Each line of the file consists of a student's name followed by an unpredictable number of test scores. The number of students is also unpredictable. The desired output is shown where the numbers there represent the average test score rounded to the nearest whole number.
-						<br><br>
-						Create a class called <i>StudentAverages</i> that will input the <i>StudentScores.in</i> text file and produce the indicated output.
-					</div>
-
-					<div class="lab">
-						<h3 class="lab-title">Write Student Averages</h3>
-
-						Modify the previous lab (Student Averages) so that it will print the output to a file rather than a console screen. Your output file should be stored in your standard folder, <i>temp_Name</i> and the file name should be <i>StudentScores.out</i>. At the completion of the program, the contents of <i>StudentScores.out</i> should be:
-						<br><br>
-						<div class="split">
-							<div class="output">
-								Agnes, average = 76<br>
-								Bufford, average = 91<br>
-								Julie, average = 94<br>
-								Alice, average = 39<br>
-								Bobby, average = 93
-							</div>
-						</div>
-						<br>
-						Call this new class <i>StudentAverages_Out</i>.
-					</div>
-
+			<a href="#">
+				<div class="topic">
+					<img src="/images/IO.jpg">
+					<h3>Input/Output</h3>
 				</div>
-			</div>
+			</a>
 
-			<div class="unit" id="set/map">
-				<h3 class="title" onclick="toggleUnit('set/map')">Sets and Maps</h3>
-
-				<div class="lab">
-					<h3 class="lab-title">HashSet/Intersection</h3>
-
-					Consider the following two sets:
-					<br><br>
-					<div class="split">
-						<div class="output">
-							s1 = {"Bill", "Larry", "Adolph", "Regina", "Susie"}<br>
-							s2 = {"Larry", "Jack", "Alice", "June", "Bennie", "Susie"}
-						</div>
-					</div>
-					<br>
-					Clearly, the intersection of these two sets is {"Larry", "Susie"}. Your job is to create a class called <i>Hash_Set</i> whose <i>main</i> method finds this intersection. Make the indicated modifications in the code below to accomplish this:
-					<br><br>
-					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.*</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// we need java.util.Set, java.util.HashSet, and java.util.Iterator</span>
-
-<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Hash_Set</span> <span style="color: #666666">{</span>
-   <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
-     Set s1 <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> HashSet<span style="color: #666666">(</span> <span style="color: #666666">);</span> <span style="color: #60a0b0; font-style: italic">//Create s1</span>
-     s1<span style="color: #666666">.</span><span style="color: #4070a0">add</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;Bill&quot;</span><span style="color: #666666">);</span>
-
-     Set s2 <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> HashSet<span style="color: #666666">(</span> <span style="color: #666666">);</span> <span style="color: #60a0b0; font-style: italic">//Create s2</span>
-     s2<span style="color: #666666">.</span><span style="color: #4070a0">add</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;Larry&quot;</span><span style="color: #666666">);</span>
-
-     <span style="color: #60a0b0; font-style: italic">// Build the intersection set</span>
-     <span style="color: #60a0b0; font-style: italic">// Modify s1 to be the intersection using the retainAll method</span>
-
-     <span style="color: #60a0b0; font-style: italic">// Print the intersection set </span>
-     <span style="color: #60a0b0; font-style: italic">// Create iter1, an Iterator for s1</span>
-     <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span> <span style="color: #666666">???</span> <span style="color: #666666">)</span> <span style="color: #666666">{</span> 
-       <span style="color: #60a0b0; font-style: italic">// Use iter1 to cycle through all objects in s1 and then print them. </span>
-     <span style="color: #666666">}</span>
-   <span style="color: #666666">}</span>
-<span style="color: #666666">}</span>
-</pre></div>
-
+			<a href="#">
+				<div class="topic">
+					<img src="/images/S&M.jpg">
+					<h3>Sets & Maps</h3>
 				</div>
+			</a>
 
-			</div>
+			<a href="#">
+				<div class="topic">
+					<img src="/images/LL.png">
+					<h3>Linked Lists</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/S&Q.png">
+					<h3>Stacks & Queues</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/Trees.png">
+					<h3>Trees</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/HashTable.jpg">
+					<h3>HashTable</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/SkipLists.jpg">
+					<h3>Skip Lists</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/Heaps.png">
+					<h3>Heaps</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/Graphs.jpg">
+					<h3>Graphs</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/gamedev.jpg">
+					<h3>Game Dev</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/BDO.png">
+					<h3>Big Data Overview</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/sql.png">
+					<h3>SQL</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/machinelearning.jpg">
+					<h3>Machine Learning</h3>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="topic">
+					<img src="/images/Projects.jpg">
+					<h3>Projects</h3>
+				</div>
+			</a>
+
 		</div>
 
-		<div id="header">
-			<span id="header-txt">Labs</span>
-		</div>
-
-		<div id="nav">
-			<a href="https://mohiganscs.github.io">Home</a>
-			<a href="https://mohiganscs.github.io/BPJ_textbook.pdf/">BPJ Textbook</a>
-			<a href="https://mohiganscs.github.io/labs/">Labs</a>
-			<a href="https://mohiganscs.github.io/solutions/">Solutions</a>
-			<a href="https://mohiganscs.github.io/about/">About</a>
-		</div>
-
-		<div class="sidebar" onclick="toggleSidebar()">
-			<div class="toggle-btn">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<ul>
-				<li onclick="toUnit('bigO')">Big O Notation</li>
-				<li onclick="toUnit('exceptions')">Exceptions</li>
-				<li onclick="toUnit('in/out')">Input/Output</li>
-				<li onclick="toUnit('set/map')">Sets and Maps</li>
-				<li>Linked Lists</li>
-				<li>Stacks and Queues</li>
-				<li>Trees</li>
-				<li>HashTable</li>
-				<li>Heaps and Priority Queues</li>
-				<li>Adjacency Lists and Adjacency Matrices</li>
-				<li>Game Project</li>
-				<li>Big Data Overview and Data Visualization</li>
-				<li>Relational Databases and Basic SQL</li>
-				<li>Advanced SQL</li>
-				<li>Machine Learning</li>
-				<li>Final Project</li>
-			</ul>
-		</div>
-
-		<script src="script.js"></script>
-	</body>
+    <script src="script.js"></script>
+  </body>
 </html>
